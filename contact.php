@@ -8,14 +8,13 @@ include 'inc/header.php';
             <div class="support_desc">
                 <h3>Support</h3>
                 <p><span>24 hours | 7 days a week | 365 days a year &nbsp;&nbsp; CAT TEAM Support</span></p>
-                <p> It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters.There are many variations of passages of Lorem Ipsum available, but the
-                    majority have suffered alteration in some form, by injected humour, or randomised words which don't
-                    look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure
-                    there isn't anything embarrassing hidden in the middle of text.</p>
+                <p> Our support team is available 24/7. If there are any complaints about our product please fill out
+                    the information fields below and send it to us. We will answer all questions as well as resolve
+                    customer requests and complaints as quickly as possible. This is a website product made by CAT TEAM
+                    in the subject ofopen source PHP.
+                </p>
             </div>
-            <img src="web/images/contact.png" alt="" />
+            <img src="images/contact.png" alt="" />
             <div class="clear"></div>
         </div>
         <div class="section group">

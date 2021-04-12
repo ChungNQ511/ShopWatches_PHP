@@ -8,41 +8,48 @@
 <?php
 $cs = new customer();
 $fm = new Format();
+if (isset($_GET['chatId'])) {
+    $id = $_GET['chatId'];
+    $reply = $cs->Admin_reply($id);
+}
 ?>
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Comment</h2>
         <div class="block">
-            <?php
-            if (isset($delcomment)) {
-                echo $delcomment;
-            }
-            ?>
+            <!-- <?php
+                    if (isset($delcomment)) {
+                        echo $delcomment;
+                    }
+                    ?> -->
             <table class="data display datatable" id="example">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>User's Comment</th>
-                        <th>Comment For Product</th>
-                        <th>Details Comment</th>
+                        <th>From</th>
+                        <th>Description</th>
+                        <th>Date Time</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $cmlist = $cs->show_comment();
-                    if ($cmlist) {
+                    $chatlist = $cs->show_chat();
+                    if ($chatlist) {
                         $i = 0;
-                        while ($result = $cmlist->fetch_assoc()) {
+                        while ($result = $chatlist->fetch_assoc()) {
                             $i++;
                     ?>
                     <tr class="odd gradeX">
                         <td><?php echo $i ?></td>
-                        <td><?php echo $result['tenbinhluan'] ?></td>
-                        <td><?php echo $result['product_id'] ?></td>
-                        <td><?php echo $result['binhluan'] ?></td>
-
-                        <td><a href="?binhluanid=<?php echo $result['binhluan_id'] ?>">Delete</a></td>
+                        <td><?php echo $result['userName'] ?></td>
+                        <td><?php echo $result['MessUser'] ?></td>
+                        <td><?php echo $result['NgaySend'] ?></td>
+                        <td><a href="adminchat.php?reply=<?php echo $result['chatId'] ?>">
+                                <?php
+                                        if ($result['reply_admin'] != '' || $result['reply_admin'] != null)
+                                            echo "Reponsed";
+                                        else echo "Reply"; ?></a></td>
                     </tr>
                     <?php
                         }

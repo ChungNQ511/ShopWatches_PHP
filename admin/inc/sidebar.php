@@ -38,7 +38,12 @@
 
                     </ul>
                 </li>
+                <li><a class="menuitem">Message</a>
+                    <ul class="submenu">
+                        <li><a href="show_chat.php">List Message</a> </li>
 
+                    </ul>
+                </li>
 
 
 

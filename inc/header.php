@@ -120,9 +120,6 @@ header("Cache-Control: max-age=2592000");
             <div class="menu">
                 <nav class="navbar navbar-inverse">
                     <div class="container-fluid">
-                        <!--  <div class="navbar-header">
-	      <a class="navbar-brand" href="#">WebSiteName</a>
-	    </div> -->
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="index.php">Home</a></li>
                             <li class="dropdown">
@@ -136,19 +133,14 @@ header("Cache-Control: max-age=2592000");
                                         while ($result_new = $cate->fetch_assoc()) {
 
                                     ?>
-
-                                    <li>
-
-                                        <a
+                                    <li><a
                                             href="productbycat.php?catid=<?php echo $result_new['catId'] ?>"><?php echo $result_new['catName'] ?></a>
                                     </li>
                                     <?php
                                         }
                                     }
                                     ?>
-
                                 </ul>
-
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -159,11 +151,8 @@ header("Cache-Control: max-age=2592000");
                                     $brand = $br->show_brand_home();
                                     if ($brand) {
                                         while ($result_new = $brand->fetch_assoc()) {
-
                                     ?>
-
                                     <li>
-
                                         <a
                                             href="topbrands.php?brandid=<?php echo $result_new['brandId'] ?>"><?php echo $result_new['brandName'] ?></a>
                                     </li>
@@ -171,13 +160,9 @@ header("Cache-Control: max-age=2592000");
                                         }
                                     }
                                     ?>
-
                                 </ul>
                             </li>
-
-
                             <li><a href="cart.php">Cart</a></li>
-
                             <?php
                             $login_check = Session::get('customer_login');
                             if ($login_check == false) {
@@ -187,24 +172,24 @@ header("Cache-Control: max-age=2592000");
                             }
                             ?>
                             <?php
-
                             $login_check = Session::get('customer_login');
                             if ($login_check) {
                                 echo '<li><a href="compare.php">Compare</a> </li>';
                             }
-
                             ?>
                             <?php
-
                             $login_check = Session::get('customer_login');
                             if ($login_check) {
                                 echo '<li><a href="wishlist.php">Favourite</a> </li>';
                             }
-
+                            ?>
+                            <?php
+                            $login_check = Session::get('customer_login');
+                            if ($login_check) {
+                                echo '<li><a href="chat.php">Chat with Admin</a> </li>';
+                            }
                             ?>
                             <li><a href="contact.php">Contact</a></li>
-
-
                         </ul>
                     </div>
                 </nav>

@@ -2,7 +2,6 @@
 <?php include 'inc/sidebar.php'; ?>
 <?php include '../classes/brand.php' ?>
 <?php
-
 if (!isset($_GET['brandid']) || $_GET['brandid'] == NULL) {
     echo "<script>window.location ='brandlist.php'</script>";
 } else {
@@ -14,9 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $brandName = $_POST['brandName'];
     $updateBrand = $brand->update_brand($brandName, $id);
 }
-
 ?>
-<?php  ?>
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Update brand</h2>

@@ -8,28 +8,35 @@
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Customer Service</a></li>
                     <li><a href="#"><span>Advanced Search</span></a></li>
-                    <li><a href="#">Orders and Returns</a></li>
-                    <li><a href="#"><span>Contact Us</span></a></li>
+                    <li><a href="payment.php">Orders and Returns</a></li>
+                    <li><a href="contact.php"><span>Contact Us</span></a></li>
                 </ul>
             </div>
             <div class="col_1_of_4 span_1_of_4">
                 <h4>Why buy from us</h4>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="a#">About Us</a></li>
                     <li><a href="faq.html">Customer Service</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="contact.html"><span>Site Map</span></a></li>
-                    <li><a href="preview.html"><span>Search Terms</span></a></li>
+                    <li><a href="contact.php"><span>Site Map</span></a></li>
+                    <li><a href="index.php"><span>Search Terms</span></a></li>
                 </ul>
             </div>
             <div class="col_1_of_4 span_1_of_4">
                 <h4>My account</h4>
                 <ul>
-                    <li><a href="contact.html">Sign In</a></li>
-                    <li><a href="index.html">View Cart</a></li>
-                    <li><a href="#">My Wishlist</a></li>
-                    <li><a href="#">Track My Order</a></li>
-                    <li><a href="faq.html">Help</a></li>
+                    <li><a href="login.php">Sign In</a></li>
+                    <li><a href="cart.php">View Cart</a></li>
+                    <li><a href="wishlist.php">My Wishlist</a></li>
+                    <li><a href="<?php
+                                    $login_check = Session::get('customer_login');
+                                    if ($login_check) {
+                                        echo "order.php";
+                                    } else {
+                                        echo "404.php";
+                                    }
+                                    ?>">Track My Order</a></li>
+                    <li><a href="contact.php">Help</a></li>
                 </ul>
             </div>
             <div class="col_1_of_4 span_1_of_4">
@@ -42,16 +49,16 @@
                     <h4>Follow Us</h4>
                     <ul>
                         <li class="facebook"><a href="https://www.facebook.com/NQC.BOCUN/" target="_blank"> </a></li>
-                        <li class="twitter"><a href="#" target="_blank"> </a></li>
-                        <li class="googleplus"><a href="#" target="_blank"> </a></li>
-                        <li class="contact"><a href="#" target="_blank"> </a></li>
+                        <li class="twitter"><a href="https://www.facebook.com/NQC.BOCUN/" target="_blank"> </a></li>
+                        <li class="googleplus"><a href="https://www.facebook.com/NQC.BOCUN/" target="_blank"> </a></li>
+                        <li class="contact"><a href="contact.php" target="_blank"> </a></li>
                         <div class="clear"></div>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="copy_right">
-            <p>Nguyễn Quốc Chung</p>
+            <p>Nguyễn Quốc Chung - Project of PHP</p>
         </div>
     </div>
 </div>
@@ -70,15 +77,6 @@
 </script>
 <script type="text/javascript">
 $(document).ready(function() {
-    /*
-    var defaults = {
-    		containerID: 'toTop', // fading element id
-    	containerHoverID: 'toTopHover', // fading element hover id
-    	scrollSpeed: 1200,
-    	easingType: 'linear' 
-    	};
-    */
-
     $().UItoTop({
         easingType: 'easeOutQuart'
     });
